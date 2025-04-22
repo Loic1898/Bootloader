@@ -9,13 +9,13 @@ main:
     mov sp, 0X7C00 ;la pile est initialisée avant le code
 
     mov si, message ;message à afficher
-    cld ;DF==0
     call print_string ;écrit le message
 
     jmp $ ;saute vers l'adresse actuelle (boucle infinie pour ne pas que le processeur essaye d'exécuter les données juste en dessous du code)
 
 print_string:
     mov ah, 0x0E ;BIOS teletype
+    cld ;DF==0
 .loop:
     lodsb ;mov al, [si] et inc si car DF==0
 
