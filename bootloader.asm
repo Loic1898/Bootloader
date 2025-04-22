@@ -1,5 +1,5 @@
-[bits 16]
-[org 0x7C00]
+bits 16
+org 0x7C00
 
 main:
     xor ax, ax ;initialise ax à 0
